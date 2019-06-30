@@ -32,6 +32,42 @@ Further help:
   https://docs.brew.sh
  ```
  
+## brew list
+`brew list`也可以简写为`brew ls`，该命令如果不加参数会列出所有通过brew安装的软件  
+``` zsh
+shiming@pro ➜  ~ brew ls
+boost			hugo			mtr			redis
+ccache			icu4c			neovim			ripgrep
+cmake			jemalloc		nginx			ruby
+cmatrix			jenv			node			solidity
+cscope			libevent		nvm			sqlite
+curl			libidn2			openresty		telnet
+eosio.cdt		libtermkey		openresty-openssl	tmux
+gdbm			libunistring		openssl			tomcat
+geoip			libuv			pcre			tree
+gettext			libvterm		pcre2			unibilium
+git			libyaml			perl			vim
+go			lua			postgresql		wget
+grafana			luajit			python			xz
+htop			maven			python@2		youtube-dl
+httpie			msgpack			readline		z3
+```
+
+如果后面跟参数，如`brew ls tomcat`就会列出软件的安装位置，配置文件位置等信息  
+``` zsh
+shiming@pro ➜  ~ brew ls tomcat -l
+/usr/local/Cellar/tomcat/9.0.21/bin/catalina
+/usr/local/Cellar/tomcat/9.0.21/homebrew.mxcl.tomcat.plist
+/usr/local/Cellar/tomcat/9.0.21/libexec/bin/ (17 files)
+/usr/local/Cellar/tomcat/9.0.21/libexec/conf/ (10 files)
+/usr/local/Cellar/tomcat/9.0.21/libexec/lib/ (31 files)
+/usr/local/Cellar/tomcat/9.0.21/libexec/temp/safeToDelete.tmp
+/usr/local/Cellar/tomcat/9.0.21/libexec/webapps/ (568 files)
+/usr/local/Cellar/tomcat/9.0.21/libexec/ (2 files)
+/usr/local/Cellar/tomcat/9.0.21/RELEASE-NOTES
+/usr/local/Cellar/tomcat/9.0.21/RUNNING.txt
+```
+ 
 ## brew uninstall
 ## brew doctor
 `brew doctor`的作用是健康检查，有问题就会列出来并给出解决方法：  
