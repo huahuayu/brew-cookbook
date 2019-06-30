@@ -1,6 +1,61 @@
 # brew-cookbook(working in progress)
 mac包管理工具brew cookbook, brew烹饪书, brew by examples
 
+## brew faq
+https://docs.brew.sh/FAQ  
+
+## brew help
+```
+shiming@pro ➜  ~ brew --help
+Example usage:
+  brew search [TEXT|/REGEX/]  # 搜索软件
+  brew info [FORMULA...]      # 查看已安装的软件信息
+  brew install FORMULA...     # 安装软件
+  brew update                 # 从github上fetch最新的Homebrew和软件包信息，并安装最新的Homebrew版本
+  brew upgrade [FORMULA...]   # 更新brew已安装的软件到最新版
+  brew uninstall FORMULA...   # 卸载软件
+  brew list [FORMULA...]      # 查看所有已安装的软件
+
+Troubleshooting:
+  brew config                 # 显示brew版本信息、系统版本信息等等，提交bug前运行brew config可帮助开发者定位问题
+  brew doctor                 # 检查潜在的系统问题
+  brew install --verbose --debug FORMULA
+
+Contributing:
+  brew create [URL [--no-fetch]]
+  brew edit [FORMULA...]
+
+Further help:
+  brew commands
+  brew help [COMMAND]
+  man brew
+  https://docs.brew.sh
+ ```
+ 
+## brew uninstall
+## brew doctor
+`brew doctor`的作用是健康检查，有问题就会列出来并给出解决方法：  
+``` bash
+shiming@pro ➜  ~ brew doctor
+Please note that these warnings are just used to help the Homebrew maintainers
+with debugging if you file an issue. If everything you use Homebrew for is
+working fine: please don't worry or file an issue; just ignore this. Thanks!
+
+Warning: The following directories do not exist:
+/usr/local/sbin
+
+You should create these directories and change their ownership to your account.
+  sudo mkdir -p /usr/local/sbin
+  sudo chown -R $(whoami) /usr/local/sbin
+
+Warning: You have unlinked kegs in your Cellar.
+Leaving kegs unlinked can lead to build-trouble and cause brews that depend on
+those kegs to fail to run properly once built. Run `brew link` on these:
+  python@2
+  python
+  mtr
+ ```
+ 
 ## 查看已安装的包信息
 ``` zsh
 shiming@pro ➜  .dotfile git:(master) brew info nvm
